@@ -1,5 +1,4 @@
-{% import "partials/language/" + config.theme.language + ".html" as lang %}
-{% import "partials/language/en.html" as fallback %}
+{% import "partials/language/en.html" as lang %}
 {% macro t(key) %}{{ {
   "direction": config.theme.direction,
   "search.language": (
