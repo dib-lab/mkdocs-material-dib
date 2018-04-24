@@ -9,10 +9,11 @@ A Material Design theme for [MkDocs][1], modified for use by the DIB Lab at UC D
 
 See [Original Readme](/ORIGINAL_README.md)
 
+
 ## What is MkDocs? What is Material?
 
-mkdocs is a very simple documentation generator;
-it is like Sphinx, but for Markdown.
+[mkdocs](http://www.mkdocs.org/) is a very straightforward 
+documentation generator; it is like Sphinx, but for Markdown.
 
 To use mkdocs, you need an `mkdocs.yml` config file
 and a `docs/` directory full of Markdown files.
@@ -25,9 +26,10 @@ This material theme will give you documentation that
 has a similar look and feel to Google documentation, 
 e.g., [Google Cloud ML Engine Documentation](https://cloud.google.com/ml-engine/docs/tensorflow/getting-started-training-prediction).
 
-The [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
-documentation shows you what the final documentation 
-will look like.
+[Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
+is an MkDocs theme that applies the principles of Material Design
+to generate documentation that looks awesome with minimal effort.
+
 
 ## Quick Start
 
