@@ -90,14 +90,28 @@ Option 1 (no frills): clone a copy of `mkdocs-material-dib`
 ```
 git clone https://github.com/dib-lab/mkdocs-material-dib.git
 echo "mkdocs-material-dib" >> .gitignore
+echo "site/" >> .gitignore
+```
+
+and commit:
+
+```
+git add .gitignore
+git commit .gitignore -m 'Ignore mkdocs-material-dib'
 ```
 
 Option 2 (distributable): add `mkdocs-material-dib` as a submodule
 
 ```
 git submodule add https://github.com/dib-lab/mkdocs-material-dib.git
-git add .gitmodules mkdocs-material-dib
-git commit .gitmodules mkdocs-material-dib -m 'Add mkdocs-material-dib submodule'
+echo "site/" >> .gitignore
+```
+
+and commit:
+
+```
+git add .gitmodules .gitignore mkdocs-material-dib
+git commit .gitmodules .gitignore mkdocs-material-dib -m 'Add mkdocs-material-dib submodule'
 ```
 
 ### Set Up Push-To-Deploy on Github Pages
