@@ -50,7 +50,9 @@ repo_name: <repo-owner>/<repo-name>
 repo_url: https://github.com/<repo-owner>/<repo-name>
 edit_uri: ""
 
-# change diirectory names here
+copyright: 'Copyright &copy; 2018 <a href="http://ivory.idyll.org/lab/">Lab for Data Intensive Biology</a> at UC Davis'
+
+# change directory names here
 docs_dir: docs
 site_dir: site
 
@@ -86,7 +88,7 @@ pages:
 Note: see [mkdocs.yml in the mkdocs-material repo](https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml)
 for a more extensive example.
 
-### Check Out mkdocs-material-dib Theme
+### Check Out `mkdocs-material-dib` Theme
 
 Run these commands from wherever you added `mkdocs.yml`
 (probably your main repo directory).
@@ -120,7 +122,7 @@ git add .gitmodules .gitignore mkdocs-material-dib
 git commit .gitmodules .gitignore mkdocs-material-dib -m 'Add mkdocs-material-dib submodule'
 ```
 
-Note that if you have a submodule in a repo, you need to clone it
+**NOTE:** if you have a submodule in a repo, you need to clone it
 using the `--recursive` flag to also clone the contents of the 
 submodule:
 
@@ -137,21 +139,27 @@ git submodule update --init
 
 ### Set Up Push-To-Deploy on Github Pages
 
-This will deploy your documentation to the following URL:
+The following process will make your final documentation 
+available on Github Pages via the following URL:
 
 ```
 https://<repo-owner>.github.io/<repo-name>
 ```
 
-First, mkdocs will make the HTML content in a directory
-called `site/`. We want to make `site/` into a copy of 
+When we generate documentation with mkdocs, it puts the 
+final static content into a directory called `site/`.
+
+We want to make `site/` into a copy of 
 our repo - specifically, the `gh-pages` branch,
 which will be a completely separate branch from
-the master branch. When we push content to the `gh-pages`
-branch, it will be hosted by Github Pages.
+the master branch. 
 
-Remove the site directory, and clone a copy of your repo
-to the `site/` directory:
+This is a push-to-deploy model: when we push content 
+to the `gh-pages` branch, it is deployed to Github Pages.
+
+From the root of this repository, start by removing the site 
+directory if it already exists. Now clone a second copy of 
+the repo to the `site/` directory:
 
 ```
 git clone https://github.com/<repo-owner>/<repo-name> site/
@@ -184,7 +192,7 @@ and enable Github Pages for your repository.
 Select the `gh-pages` branch for the content 
 location.
 
-Check your Github Pages URL for the hello world page:
+Check your Github Pages URL for that hello world page:
 
 ```
 https://<repo-owner>.github.io/<repo-name>
