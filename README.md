@@ -116,6 +116,21 @@ git add .gitmodules .gitignore mkdocs-material-dib
 git commit .gitmodules .gitignore mkdocs-material-dib -m 'Add mkdocs-material-dib submodule'
 ```
 
+Note that if you have a submodule in a repo, you need to clone it
+using the `--recursive` flag to also clone the contents of the 
+submodule:
+
+```
+git clone --recursive <git-repo-url>
+```
+
+If you already have a copy of the repo checked out, but the submodule is empty,
+initialize the submodule contents:
+
+```
+git submodule update --init
+```
+
 ### Set Up Push-To-Deploy on Github Pages
 
 This will deploy your documentation to the following URL:
