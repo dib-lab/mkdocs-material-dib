@@ -48,6 +48,7 @@ site_name: your-cool-site
 site_url: <url-for-your-docs>
 repo_name: <repo-owner>/<repo-name>
 repo_url: https://github.com/<repo-owner>/<repo-name>
+edit_uri: ""
 
 # change diirectory names here
 docs_dir: docs
@@ -81,6 +82,9 @@ pages:
   - 'Index' : 'index.md'
   # etc...
 ```
+
+Note: see [mkdocs.yml in the mkdocs-material repo](https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml)
+for a more extensive example.
 
 ### Check Out mkdocs-material-dib Theme
 
