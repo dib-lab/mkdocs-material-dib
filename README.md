@@ -1,62 +1,195 @@
-[![Travis][travis-image]][travis-link]
-[![Gitter][gitter-image]][gitter-link]
-[![Codacy][codacy-image]][codacy-link]
-[![Docker][docker-image]][docker-link]
-[![PyPI][pypi-image]][pypi-link]
+# Material for MkDocs: DIB Lab Theme
 
-  [travis-image]: https://travis-ci.org/squidfunk/mkdocs-material.svg?branch=master
-  [travis-link]: https://travis-ci.org/squidfunk/mkdocs-material
-  [gitter-image]: https://img.shields.io/gitter/room/squidfunk/mkdocs-material.svg
-  [gitter-link]: https://gitter.im/squidfunk/mkdocs-material
-  [codacy-image]: https://api.codacy.com/project/badge/Grade/fe07aa1fa91d453cb69711d3885c5d7e
-  [codacy-link]: https://www.codacy.com/app/squidfunk/mkdocs-material?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=squidfunk/mkdocs-material&amp;utm_campaign=Badge_Grade
-  [docker-image]: https://img.shields.io/docker/pulls/squidfunk/mkdocs-material.svg
-  [docker-link]: https://hub.docker.com/r/squidfunk/mkdocs-material/
-  [pypi-image]: https://img.shields.io/pypi/v/mkdocs-material.svg
-  [pypi-link]: https://pypi.python.org/pypi/mkdocs-material
-
-# Material for MkDocs
-
-A Material Design theme for [MkDocs][1].
+A Material Design theme for [MkDocs][1], modified for use by the DIB Lab at UC Davis.
 
 [![Material for MkDocs](docs/assets/images/material.png)][2]
 
   [1]: http://www.mkdocs.org
   [2]: https://squidfunk.github.io/mkdocs-material/
 
-## Quick start
+## What is MkDocs? What is Material?
 
-Install the latest version of Material with `pip`:
+mkdocs is a very simple documentation generator;
+it is like Sphinx, but for Markdown.
 
-``` sh
-pip install mkdocs-material
+To use mkdocs, you need an `mkdocs.yml` config file
+and a `docs/` directory full of Markdown files.
+This will generate the site HTML in the `site/` 
+directory. (This is all configurable.)
+
+[Material Design](https://material.io/guidelines/material-design/) 
+is a set of design principles originating from Google. 
+This material theme will give you documentation that 
+has a similar look and feel to Google documentation, 
+e.g., [Google Cloud ML Engine Documentation](https://cloud.google.com/ml-engine/docs/tensorflow/getting-started-training-prediction).
+
+The [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
+documentation shows you what the final documentation 
+will look like.
+
+## Quick Start
+
+To get started, you'll follow these steps:
+
+* Create an `mkdocs.yml` config file
+* Check out the mkdocs-material-dib theme (optionally: as a submodule)
+* (Optional) Set up push to deploy on Github Pages
+
+### MkDocs Config File
+
+Create an `mkdocs.yml` config file:
+
 ```
+site_name: your-cool-site
 
-Append the following line to your project's `mkdocs.yml`:
+# change diirectory names here
+docs_dir: docs
+site_dir: site
 
-``` yaml
 theme:
-  name: 'material'
+
+  # the next 2 lines are required to use the DIB version
+  name: null
+  custom_dir: 'mkdocs-material-dib/material'
+
+  # pretty colors! see https://squidfunk.github.io/mkdocs-material/getting-started/#primary-colors
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  
+  # fun logos! see https://material.io/icons/
+  logo:
+    icon: 'dns'
+
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# this will add docs/css/custom.css to all your docs
+extra_css:
+  - css/custom.css
+
+# give a title for each page
+pages:
+  - 'Index' : 'index.md'
+  # etc...
 ```
 
-## What to expect
+### Check Out mkdocs-material-dib Theme
 
-* Responsive design and fluid layout for all kinds of screens and devices,
-  designed to serve your project documentation in a user-friendly way in 25
-  languages with optimal readability.
+Run these commands from wherever you added `mkdocs.yml`
+(probably your main repo directory).
 
-* Easily customizable primary and accent color, fonts, favicon and logo;
-  straight forward localization through theme extension; integrated with Google
-  Analytics, Disqus and GitHub.
+Option 1 (no frills): clone a copy of `mkdocs-material-dib`
 
-* Well-designed search interface accessible through hotkeys (<kbd>F</kbd> or
-  <kbd>S</kbd>), intelligent grouping of search results, search term
-  highlighting and lazy loading.
+```
+git clone https://github.com/dib-lab/mkdocs-material-dib.git
+echo "mkdocs-material-dib" >> .gitignore
+```
 
-For detailed installation instructions and a demo, visit
-https://squidfunk.github.io/mkdocs-material/
+Option 2 (distributable): add `mkdocs-material-dib` as a submodule
 
-## License
+```
+git submodule add https://github.com/dib-lab/mkdocs-material-dib.git
+git add .gitmodules mkdocs-material-dib
+git commit .gitmodules mkdocs-material-dib -m 'Add mkdocs-material-dib submodule'
+```
+
+### Set Up Push-To-Deploy on Github Pages
+
+This will deploy your documentation to the following URL:
+
+```
+https://<repo-owner>.github.io/<repo-name>
+```
+
+First, mkdocs will make the HTML content in a directory
+called `site/`. We want to make `site/` into a copy of 
+our repo - specifically, the `gh-pages` branch,
+which will be a completely separate branch from
+the master branch. When we push content to the `gh-pages`
+branch, it will be hosted by Github Pages.
+
+Remove the site directory, and clone a copy of your repo
+to the `site/` directory:
+
+```
+git clone https://github.com/<repo-owner>/<repo-name> site/
+cd site/
+```
+
+From the site directory, create an orphan branch 
+called `gh-pages`. An orphan branch shares no history
+with any other branches in the repo. This keeps our 
+web content from mixing with our code.
+
+```
+git checkout --orphan gh-pages
+```
+
+Now remove all the files in the site directory,
+and add a "Hello World" page to test that 
+Github Pages is working:
+
+```
+rm -rf * .gitmodules .gitignore
+echo '<h1>Hello World</h1>' > index.html
+git add index.html 
+git commit index.html -m 'Initial commit of gh-pages branch'
+git push origin gh-pages
+```
+
+Now go to your repository settings on Github
+and enable Github Pages for your repository.
+Select the `gh-pages` branch for the content 
+location.
+
+Check your Github Pages URL for the hello world page:
+
+```
+https://<repo-owner>.github.io/<repo-name>
+```
+
+Once you see Hello World, you're ready to upload your docs.
+Back in the main directory of your repository,
+or wherever `mkdocs.yml` is located, run the command
+to build your documentation with mkdocs:
+
+```
+mkdocs build
+```
+
+This will build all of your documentation 
+in the `site/` directory.
+
+To test your documentation out locally, run
+
+```
+mkdocs serve
+```
+
+and visit `localhost:8000` in your browser.
+
+When you are happy with your documentation,
+make a clean copy in preparation for uploading it:
+
+```
+rm -rf site/*   # Clean out any existing files
+mkdocs build    # Build the docs in site/
+cd site/
+git add -A .    # Stage every change in the current directory for commit
+git commit -a   # Commit all changes
+git push origin gh-pages
+```
+
+Now your documentation should be live!
+
+To re-make your documentation, just re-run the 
+block of commands above. 
+
+## Original MkDocs-Material License
+
+Original Github repo: [https://github.com/squidfunk/mkdocs-material](https://github.com/squidfunk/mkdocs-material)
 
 **MIT License**
 
