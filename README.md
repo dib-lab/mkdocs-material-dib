@@ -41,6 +41,9 @@ Create an `mkdocs.yml` config file:
 
 ```
 site_name: your-cool-site
+site_url: <url-for-your-docs>
+repo_name: <repo-owner>/<repo-name>
+repo_url: https://github.com/<repo-owner>/<repo-name>
 
 # change diirectory names here
 docs_dir: docs
