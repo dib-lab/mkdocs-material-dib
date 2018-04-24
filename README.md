@@ -7,6 +7,8 @@ A Material Design theme for [MkDocs][1], modified for use by the DIB Lab at UC D
   [1]: http://www.mkdocs.org
   [2]: https://squidfunk.github.io/mkdocs-material/
 
+See [Original Readme](/ORIGINAL_README.md)
+
 ## What is MkDocs? What is Material?
 
 mkdocs is a very simple documentation generator;
