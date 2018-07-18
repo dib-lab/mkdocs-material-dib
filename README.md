@@ -230,6 +230,13 @@ git commit -a   # Commit all changes
 git push origin gh-pages
 ```
 
+Alternatively, you can use ghp-import:
+
+1. update the docs and commit your changes to master/branch of choice
+2. `mkdocs build` to update the docs
+3. if you haven’t already, install ghp-import: `conda install -c conda-forge ghp-import`
+4. use ghp-import to push the updated to docs to the gh-pages branch  `ghp-import site -p`
+
 Now your documentation should be live!
 
 To re-make your documentation, just re-run the 
