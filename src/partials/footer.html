@@ -24,6 +24,10 @@
 
 <!-- Application footer -->
 <footer class="md-footer">
+  {% if config.extra.hypothesis %}
+     <script src="https://hypothes.is/embed.js" async></script>
+  {% endif %}
+
 
   <!-- Link to previous and/or next page -->
   {% if page.previous_page or page.next_page %}

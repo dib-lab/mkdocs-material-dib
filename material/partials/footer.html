@@ -1,5 +1,8 @@
 {% import "partials/language.html" as lang with context %}
 <footer class="md-footer">
+  {% if config.extra.hypothesis %}
+     <script src="https://hypothes.is/embed.js" async></script>
+  {% endif %}
   {% if page.previous_page or page.next_page %}
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
