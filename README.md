@@ -79,14 +79,31 @@ theme:
 extra_css:
   - css/custom.css
 
+
 # give a title for each page
-pages:
-  - 'Index' : 'index.md'
+nav:
+  - Index : 'index.md'
+  - About : 'about.md'
+  - Special Docs: 'special/docs.md'
   # etc...
+
+
 ```
 
 Note: see [mkdocs.yml in the mkdocs-material repo](https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml)
 for a more extensive example.
+
+### Install mkdocs
+
+Tags v1.0 and v1.1 of mkdocs-material-dib work with mkdocs <= 0.17.
+
+Tag v2.0 of mkdocs-material-dib works with mkdocs >= 1.0.
+
+We recommend using mkdocs >= 1.0, which can be installed using pip:
+
+```
+pip install mkdocs>=1.0
+```
 
 ### Check Out `mkdocs-material-dib` Theme
 
