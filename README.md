@@ -87,7 +87,13 @@ nav:
   - Special Docs: 'special/docs.md'
   # etc...
 
-
+# Include the following to enable disqus and
+# hypothesis on your mkdocs site:
+extra:
+  # annotation
+  hypothesis: true
+  # disqus
+  disqus: <insert-name-of-disqus-forum-here>
 ```
 
 Note: see [mkdocs.yml in the mkdocs-material repo](https://github.com/squidfunk/mkdocs-material/blob/master/mkdocs.yml)
