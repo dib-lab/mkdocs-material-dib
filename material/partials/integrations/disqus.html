@@ -3,6 +3,7 @@
   {% set disqus = page.meta.disqus %}
 {% endif %}
 {% if not page.is_homepage and disqus %}
+  <a name="disqus_comments"></a>
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
   <div id="disqus_thread"></div>
   <script>
