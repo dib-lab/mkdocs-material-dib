@@ -205,5 +205,8 @@
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
+    {% block matomo %}
+      {% include "partials/integrations/matomo.html" %}
+    {% endblock %}
   </body>
 </html>
