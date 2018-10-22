@@ -200,6 +200,9 @@
         <script src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
+    {% block matomo %}
+      {% include "partials/integrations/matomo.html" %}
+    {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
