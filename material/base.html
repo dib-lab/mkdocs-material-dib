@@ -78,6 +78,11 @@
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
     {% block extrahead %}{% endblock %}
+
+    {% block matomo %}
+      {% include "partials/integrations/matomo.html" %}
+    {% endblock %}
+
   </head>
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
@@ -199,9 +204,6 @@
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
-    {% endblock %}
-    {% block matomo %}
-      {% include "partials/integrations/matomo.html" %}
     {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
