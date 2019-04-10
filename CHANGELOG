@@ -1,3 +1,35 @@
+mkdocs-material-3.3.0 (2019-01-29)
+
+  * Moved Google Analytics integration into `head` using Google Tag Manager
+  * Fixed #972: Unicode slugifier breaks table of contents blur on scroll
+  * Fixed #974: Additional links in table of contents break blur on scroll
+
+mkdocs-material-3.2.0 (2018-12-28)
+
+  * Added support for redirects using metadata refresh
+  * Fixed #921: Load Google Analytics snippet asynchronously
+
+mkdocs-material-3.1.0 (2018-11-17)
+
+  * Added support for Progressive Web App Manifest
+  * Fixed #915: Search bug in Safari (upgraded Lunr.js)
+
+mkdocs-material-3.0.6 (2018-10-26)
+
+  * Added Taiwanese translations
+  * Fixed #906: JavaScript code blocks evaluated in search results
+
+mkdocs-material-3.0.5 (2018-10-23)
+
+  * Added Croatian and Indonesian translations
+  * Fixed #899: Skip-to-content link invalid from 2nd level on
+  * Fixed #902: Missing URL filter in footer for FontAwesome link
+
+mkdocs-material-3.0.4 (2018-09-03)
+
+  * Updated Dutch translations
+  * Fixed #856: Removed preconnect meta tag if Google Fonts are disabled
+
 mkdocs-material-3.0.3 (2018-08-07)
 
   * Fixed #841: Additional path levels for extra CSS and JS
