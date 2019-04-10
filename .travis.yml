@@ -21,6 +21,8 @@
 language: node_js
 sudo: false
 
+python: 3
+
 # Node.js version and necessary services
 node_js: 8
 services:
