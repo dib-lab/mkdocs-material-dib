@@ -46,6 +46,3 @@ script:
   - npm run lint
   - npm run build
 
-# Deploy artifacts
-after_success:
-  - ./.travis.sh
